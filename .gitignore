@@ -1,0 +1,13 @@
+# Fontes brutas (fotos/vídeo originais) — não necessárias para o deploy.
+# Ficam só no computador local. As versões otimizadas já estão em site/assets.
+IMAGENS EVENTO 2025/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Ferramentas / temporários
+node_modules/
+.vercel/
+scratchpad/
+*.log
