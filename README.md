@@ -1,27 +1,24 @@
 # Araucária — Festival de Churrasco · 4ª Edição · Pitanga-PR
 
-Site de captura + proposta comercial do **Araucária Festival de Churrasco 2026**.
+Site de captura do **Araucária Festival de Churrasco 2026**.
 Venda de ingressos pelo WhatsApp **(44) 99928-3900**.
 
 ## Estrutura
 
-- **`site/`** — Página de captura (é o que vai para o ar). One-page com vídeo,
-  galeria, números animados, carrossel de patrocinadores e CTA de WhatsApp.
-- **`proposta/`** — Proposta comercial da cobertura audiovisual (documento
-  interno para o cliente; **não** é publicado).
+- **`index.html` + `assets/`** — o site (fica na **raiz** do repositório, então a
+  Vercel publica sem precisar de nenhuma configuração especial).
+- **`proposta/`** — proposta comercial da cobertura audiovisual (documento
+  interno; não é publicado).
 
-## Publicar o site na Vercel (grátis)
+## Publicar na Vercel (grátis)
 
 1. Acesse **vercel.com** e faça login com o **GitHub**.
-2. **Add New… → Project** e importe o repositório **`araucaria4edicao`**.
-3. Em **Root Directory**, clique em **Edit** e selecione a pasta **`site`**.
-   *(passo importante — é o que faz a Vercel servir o site certo)*
+2. **Add New… → Project** e importe **`araucaria4edicao`**.
+3. **Não precisa mexer em Root Directory** — deixe em branco/padrão.
 4. Clique em **Deploy**.
 
-Em ~1 minuto o site fica no ar num link tipo `araucaria4edicao.vercel.app`,
-pronto para mandar no WhatsApp. Depois dá para conectar um domínio próprio.
+> Se você já tinha um projeto e definiu **Root Directory = `site`**, agora
+> **apague esse valor** (deixe em branco), porque o site foi movido para a raiz.
 
-## Atualizar o site
-
-Qualquer alteração enviada para a branch `main` no GitHub é publicada
-automaticamente pela Vercel.
+Em ~1 minuto o site fica no ar. Qualquer mudança enviada para a branch `main`
+é republicada automaticamente.
