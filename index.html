@@ -28,8 +28,9 @@
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
 
-  #embers{position:fixed;inset:0;width:100%;height:100%;z-index:6;pointer-events:none;opacity:.55}
-  .heatbase{position:fixed;left:0;right:0;bottom:0;height:24vh;z-index:5;pointer-events:none;background:linear-gradient(0deg,rgba(199,38,31,.20),rgba(242,150,15,.07) 45%,transparent)}
+  #embers{position:fixed;inset:0;width:100%;height:100%;z-index:6;pointer-events:none;opacity:.82}
+  .heatbase{position:fixed;left:0;right:0;bottom:0;height:32vh;z-index:5;pointer-events:none;background:radial-gradient(55% 65% at 12% 118%,rgba(242,150,15,.32),transparent 70%),radial-gradient(55% 65% at 88% 118%,rgba(199,38,31,.34),transparent 70%),linear-gradient(0deg,rgba(199,38,31,.28),rgba(242,150,15,.11) 50%,transparent);animation:heat 3.6s ease-in-out infinite}
+  @keyframes heat{0%,100%{opacity:.88}50%{opacity:1}}
   .page{position:relative;z-index:1}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
 
@@ -474,8 +475,8 @@
   function fakeRand(){ seed=(seed*9301+49297)%233280/233280; return seed; }
   function rnd(a,b){ return a+(b-a)*fakeRand(); }
   function resize(){ w=c.width=innerWidth*DPR; h=c.height=innerHeight*DPR; c.style.width=innerWidth+'px'; c.style.height=innerHeight+'px'; }
-  function spawn(init){ return {x:rnd(0,w),y:init?rnd(0,h):h+rnd(0,40),r:rnd(.6,2.4)*DPR,vy:rnd(.2,.9)*DPR,vx:rnd(-.25,.25)*DPR,life:rnd(.3,1),hue:rnd(18,40),flick:rnd(0,6.28)}; }
-  function make(){ var n=Math.max(36,Math.min(110,Math.round((innerWidth*innerHeight)/22000))); parts=[]; for(var i=0;i<n;i++) parts.push(spawn(true)); }
+  function spawn(init){ return {x:rnd(0,w),y:init?rnd(0,h):h+rnd(0,40),r:rnd(.8,3.4)*DPR,vy:rnd(.35,1.15)*DPR,vx:rnd(-.3,.3)*DPR,life:rnd(.3,1),hue:rnd(18,40),flick:rnd(0,6.28)}; }
+  function make(){ var n=Math.max(55,Math.min(170,Math.round((innerWidth*innerHeight)/15000))); parts=[]; for(var i=0;i<n;i++) parts.push(spawn(true)); }
   function tick(){
     ctx.clearRect(0,0,w,h);
     for(var i=0;i<parts.length;i++){
