@@ -101,6 +101,10 @@
   .gal-sub::before{content:"";width:26px;height:2px;background:var(--fogo)}
 
   .reviva .video-wrap{margin-bottom:0}
+  .chamada{background:linear-gradient(180deg,var(--carvao-2),var(--carvao))}
+  .reel{position:relative;width:min(380px,86vw);margin:0 auto;aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid rgba(242,150,15,.35);box-shadow:0 30px 80px -28px rgba(199,38,31,.65);background:#000}
+  .reel video{width:100%;height:100%;object-fit:cover;display:block}
+  .chamada-cta{margin-top:28px;text-align:center}
   .unmute{position:absolute;top:14px;right:14px;z-index:2;background:rgba(20,12,8,.72);color:var(--palha);border:1px solid var(--linha);border-radius:100px;padding:8px 14px;font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;font-size:12px;cursor:pointer;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);transition:border-color .18s ease,color .18s ease,background .18s ease}
   .unmute:hover{border-color:var(--fogo);color:var(--fogo)}
   .unmute.on{background:var(--fogo);color:#1a0d05;border-color:var(--fogo)}
@@ -232,6 +236,25 @@
     </div>
   </section>
 
+  <section class="chamada">
+    <div class="wrap">
+      <div class="head-block reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+        <span class="eyebrow">O convite</span>
+        <h2 class="section-title">Olha o que te espera em 2026</h2>
+      </div>
+      <div class="reel reveal">
+        <video id="chamada" autoplay muted loop playsinline preload="metadata" poster="assets/video/chamada-poster.jpg">
+          <source src="assets/video/chamada-2026.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+        <button class="unmute" id="unmuteChamada" type="button" aria-label="Ativar som">🔊 Ativar som</button>
+      </div>
+      <div class="chamada-cta reveal">
+        <a class="btn btn-fire" href="#" data-wa target="_blank" rel="noopener">Garantir meu lugar</a>
+      </div>
+    </div>
+  </section>
+
   <section class="reviva">
     <div class="wrap">
       <div class="head-block reveal">
@@ -239,11 +262,10 @@
         <h2 class="section-title">Foi assim que 2025 pegou fogo</h2>
       </div>
       <div class="video-wrap reveal">
-        <video id="aftermovie" autoplay muted loop playsinline controls preload="auto" poster="assets/video/poster.jpg">
+        <video id="aftermovie" controls playsinline preload="none" poster="assets/video/poster.jpg">
           <source src="assets/video/araucaria-2025.mp4" type="video/mp4">
           Seu navegador não suporta vídeo.
         </video>
-        <button class="unmute" id="unmuteBtn" type="button" aria-label="Ativar som">🔊 Ativar som</button>
       </div>
     </div>
   </section>
@@ -418,7 +440,7 @@
   }
 
   /* vídeo: autoplay mudo + botão de som */
-  var vid = document.getElementById('aftermovie'), unmute = document.getElementById('unmuteBtn');
+  var vid = document.getElementById('chamada'), unmute = document.getElementById('unmuteChamada');
   if(vid && unmute){
     unmute.addEventListener('click', function(){
       vid.muted = !vid.muted;
